@@ -30,12 +30,21 @@ if (!isProduction) {
   app.use(errorhandler());
 }
 
-if(isProduction){
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect('mongodb://localhost/conduit');
-  mongoose.set('debug', true);
-}
+// if(isProduction){
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect('mongodb://localhost/conduit');
+//   mongoose.set('debug', true);
+// }
+
+
+app.get('/v1/health', (req, res, next) => {
+  res.status(200).send('OK')
+})
+app.get('/', (req, res, next) => {
+  res.status(200).send('Server running on port 3000')
+})
+
 
 require('./models/User');
 require('./models/Article');
