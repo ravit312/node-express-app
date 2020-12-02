@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/v1/health', (req, res) => {
-  res.status(200).send('OK, <h1 style="color:blue;">Pod running successfully!</h1> ')
+  res.status(200).send('OK, <h1 style="color:red;">Pod running successfully!</h1> ')
 })
 
 app.listen(PORT, HOST);
