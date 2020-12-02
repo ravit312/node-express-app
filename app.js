@@ -10,7 +10,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('<h1 style="color:green;">Node Js App running successfuly!</h1> \n');
+  res.send('<h1 style="color:green;">Node Js App running successfully on 3000!</h1> \n');
 });
 
 
